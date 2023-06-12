@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Canvas Graphics</h1>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000"></canvas>
+    <canvas id="myCanvas1" width="200" height="100" style="border:1px solid #000000"></canvas>
+    <canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000"></canvas>
+    <canvas id="myCanvas3" width="200" height="100" style="border:1px solid #000000"></canvas>
+    <canvas id="myCanvas4" width="200" height="100" style="border:1px solid #000000"></canvas>
+    <canvas id="myCanvas5" width="200" height="100" style="border:1px solid #000000"></canvas>
+
+    <script>
+        // Diagonal Line
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+
+        // Draw a Circle
+        var c1 = document.getElementById("myCanvas1");
+        var ctx1 = c1.getContext("2d");
+        ctx1.beginPath();
+        ctx1.arc(100, 50, 40, 0, 2 * Math.PI);
+        ctx1.stroke();
+
+        // Draw a Text
+        var c2 = document.getElementById("myCanvas2");
+        var ctx2 = c2.getContext("2d");
+        ctx2.font = "30px Arial";
+        ctx2.fillText("Hello Ashish", 15, 60);
+
+        // Draw Stroke Text
+        var c3 = document.getElementById("myCanvas3");
+        var ctx3 = c3.getContext("2d");
+        ctx3.font = "30px Arial";
+        ctx3.strokeText("Ashish", 50, 60);
+
+        // Draw Linear Gradient
+        var c4 = document.getElementById("myCanvas4");
+        var ctx4 = c4.getContext("2d");
+        //Create gradient
+        var grd = ctx4.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "orange");
+        grd.addColorStop(1, "white");
+        //FIll with gradient
+        ctx4.fillStyle = grd;
+        ctx4.fillRect(10, 10, 150, 80);
+
+        // Draw Radial Gradient
+        var c5 = document.getElementById("myCanvas5");
+        var ctx5 = c5.getContext("2d");
+        //Create gradient
+        var grd1 = ctx5.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd1.addColorStop(0, "orange");
+        grd1.addColorStop(1, "white");
+        //FIll with gradient
+        ctx5.fillStyle = grd1;
+        ctx5.fillRect(10, 10, 150, 80);
+    </script>
+</body>
+</html>
